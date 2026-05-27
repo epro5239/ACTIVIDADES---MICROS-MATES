@@ -1,0 +1,29 @@
+﻿LISTA DE MATERIALES - PRÁCTICA 16
+===================================
+
+COMPONENTES ELECTRÓNICOS:
+├── 1x Raspberry Pi Pico W
+├── 1x Protoboard (830 puntos)
+├── 1x Transistor NPN 2N2222A
+├── 1x Módulo Relevador 5V (1 canal)
+├── 1x Diodo 1N4007
+├── 1x Fotorresistencia (LDR) 5mm
+├── 1x Resistencia 1kΩ (1/4W) - Colores: Café,Negro,Rojo
+├── 1x Resistencia 10kΩ (1/4W) - Colores: Café,Negro,Naranja
+├── 1x Bombillo/Lámpara (110V/220V AC)
+├── 1x Fuente de alimentación 5V USB
+├── 1x Cable USB Micro-USB
+├── Cables Dupont Macho-Hembra
+├── Cables Dupont Macho-Macho
+└── Cable para conexiones AC
+
+HERRAMIENTAS NECESARIAS:
+├── Multímetro digital
+├── Dispositivo Android con Bluetooth 4.0+
+└── Computadora con Arduino IDE
+
+SOFTWARE REQUERIDO:
+├── Arduino IDE 2.0+
+├── Placa Raspberry Pi Pico W instalada
+├── Flutter SDK 3.0+
+└── Android Studio (opcional)

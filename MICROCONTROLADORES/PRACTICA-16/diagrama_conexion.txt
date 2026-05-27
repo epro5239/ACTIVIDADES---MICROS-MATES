@@ -1,0 +1,58 @@
+﻿DIAGRAMA DE CONEXIÓN - CONTROL DE ILUMINACIÓN BLUETOOTH
+========================================================
+RASPBERRY PI PICO W + TRANSISTOR 2N2222A + RELEVADOR 5V
+
+                 Raspberry Pi Pico W
+              ┌─────────────────────────┐
+              │                         │
+              │  VBUS (Pin 40) 5V ──────┼──→ VCC Relevador
+              │  GND  (Pin 38) ─────────┼──→ Emisor Transistor
+              │  GP0  (Pin 1)  ─────────┼──→ Resistencia 1kΩ → Base Transistor
+              │  GP26 (Pin 31) ADC0 ────┼──→ Punto medio LDR/Resistencia
+              │  3.3V (Pin 36) ─────────┼──→ Resistencia 10kΩ → LDR → GND
+              │                         │
+              └─────────────────────────┘
+
+    CIRCUITO TRANSISTOR + RELEVADOR (Vista esquemática):
+    
+    5V (VBUS) ──────┬──────────────────┐
+                    │                  │
+                    │    ╔════════════╗ │
+                    │    ║  RELEVADOR ║ │
+                    │    ║    5V      ║ │
+                    │    ╚════════════╝ │
+                    │       │     │     │
+                    │     VCC   IN   GND │
+                    │       │     │     │
+                    └───────┼──┐  │     │
+                            │  │  │     │
+                      DIODO │  │  │     │
+                      1N4007 │  │  │     │
+                      (ÁNODO)│  │  │     │
+                            │  │  │     │
+                            └──┘  │     │
+                                  │     │
+                    Colector ←────┘     │
+              ┌─── TRANSISTOR 2N2222A   │
+    GP0 ──→ R1(1kΩ) → Base             │
+              └─── Emisor ──────────────┘
+                          │
+                         GND
+
+    DIVISOR DE VOLTAJE LDR:
+    
+    3.3V ────→ R2(10kΩ) ──┬──→ GP26 (ADC0)
+                           │
+                           └──→ LDR ──→ GND
+
+    CONEXIÓN DEL BOMBILLO (AC):
+    
+    Fase AC ──→ COM (Relevador)
+    NO (Relevador) ──→ Bombillo ──→ Neutro AC
+
+    VALORES DE COMPONENTES:
+    - R1 (Base): 1kΩ, 1/4W
+    - R2 (LDR): 10kΩ, 1/4W
+    - D1: Diodo 1N4007 (protección bobina)
+    - Q1: Transistor NPN 2N2222A
+    - Relevador: 5V, 1 canal
